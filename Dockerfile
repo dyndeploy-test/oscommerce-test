@@ -7,4 +7,5 @@ RUN cd /tmp && \
     unzip oscommerce.zip && \
     cp -ar oscommerce-2.4.0/catalog/* /var/www/html && \
     rm -r oscommerce.zip oscommerce-2.4.0 && \
+    sed -i "s/if (.*http_server.*) {/if(false) {/" /var/www/html/includes/application_top.php && \
     chown -R www-data:www-data /var/www/html
